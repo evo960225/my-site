@@ -1,0 +1,30 @@
+<template>
+  <div class="flex justify-evenly">
+    <div id="canvas1"></div>
+    <div id="canvas2"></div>
+  </div>
+</template>
+
+<script lang="ts">
+
+  import { ref, defineComponent } from 'vue';
+  import dount_init from '../assets/ts/three_dount';
+  import cube_init from '../assets/ts/three_cube';
+  
+  export default defineComponent({
+    mounted() {
+      const canvas = document.querySelector('#canvas1');
+      if(canvas!==null){
+        dount_init(canvas);
+      }
+      const canvas2 = document.querySelector('#canvas2');
+      if(canvas2!==null){
+        cube_init(canvas2);
+      }
+    },
+    methods:{
+    }
+  })
+ 
+
+</script>
