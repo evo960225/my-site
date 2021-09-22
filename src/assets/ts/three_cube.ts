@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-
 export default function cube_init(element: Element){
     const loader = new GLTFLoader();
     const scene = new THREE.Scene();
@@ -33,8 +32,8 @@ export default function cube_init(element: Element){
     scene.add( dirLight3 );
 
     let model :THREE.Group;
-
-    loader.load( '../src/assets/cube.glb', function ( gltf ) {
+    const modelUrl = new URL('../cube.glb', import.meta.url);
+    loader.load( modelUrl.href, function ( gltf ) {
         model = gltf.scene;
         model.position.set( 0, 0, 0 );
         model.scale.set( 1, 1, 1 );
@@ -44,7 +43,7 @@ export default function cube_init(element: Element){
     } );
             
     element.appendChild( renderer.domElement );
-    var animate = function () {
+    const animate = function () {
         requestAnimationFrame( animate );
         renderer.render( scene, camera );
     };

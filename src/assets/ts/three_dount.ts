@@ -34,7 +34,8 @@ export default function dount_init(element: Element){
 
     let model :THREE.Group;
 
-    loader.load( '../src/assets/donut.glb', function ( gltf ) {
+    const modelUrl = new URL('../donut.glb', import.meta.url);
+    loader.load( modelUrl.href, function ( gltf ) {
         model = gltf.scene;
         model.position.set( 0, 0, 0 );
         model.scale.set( 4, 4, 4 );
@@ -44,7 +45,7 @@ export default function dount_init(element: Element){
     } );
             
     element.appendChild( renderer.domElement );
-    var animate = function () {
+    const animate = function () {
         requestAnimationFrame( animate );
         renderer.render( scene, camera );
     };
