@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -15,6 +15,8 @@
     "@headlessui/vue": "^1.4.1",
     "@heroicons/vue": "^1.0.4",
     "@types/three": "^0.131.0",
+    "express": "^4.17.1",
+    "serve-static": "^1.14.1",
     "three": "^0.132.2",
     "vue": "^3.0.5",
     "vue-router": "^4.0.11"
