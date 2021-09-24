@@ -35,7 +35,7 @@
            @click="showNavSmall=false">
         <font-awesome-icon :icon="['fas','times']" />
       </div>
-      <nav>
+      <nav @click="showNavSmall=false">
         <router-link v-for="item in menu_items" :key="item.name" :to="item.link"  
                      class="nav_menu__item block align-middle text-gray-600 hover:bg-gray-700 hover:text-white pl-4 pr-3 py-2 rounded-md text-lg tracking-030"> 
           {{ item.name }} 

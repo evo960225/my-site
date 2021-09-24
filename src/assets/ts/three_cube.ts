@@ -11,9 +11,9 @@ export default function cube_init(element: Element){
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( 600, 400 );
-    camera.position.x = 1.5;
+    camera.position.x = 2;
     camera.position.y = 0.5;
-    camera.position.z = 1.5;
+    camera.position.z = 2;
     const controls = new OrbitControls( camera, renderer.domElement );
     controls.minDistance = 2;
     controls.maxDistance = 4.5;

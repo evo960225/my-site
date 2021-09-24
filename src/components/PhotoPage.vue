@@ -4,7 +4,7 @@
        class="group relative mx-1 my-1 rounded-lg md:mx-2 md:my-2"
        @click="show_image(getImageUrl(p.src), p.title)">
       <img :src="get_sm_image_url(p.src)" alt=""
-           class="rounded-lg shadow-lg filter brightness-90 object-cover aspect-1 h-20
+           class="rounded-lg shadow-lg filter brightness-90 object-cover aspect-1 h-24
                   sm:h-32
                   md:h-64
                   transition duration-400 ease-in-out
