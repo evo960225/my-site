@@ -1,26 +1,27 @@
 <template>
-<div></div>
-<div class="flex warp mx-12">
-    <div v-for="article in articles" :key="article.title"
-         class="flex-1 mx-4 border shadow rounded border-gray-400 h-56">
+  <div class="flex warp mx-12">
+    <div 
+      v-for="article in articles"
+      :key="article.title" 
+      class="flex-1 mx-4 border shadow rounded border-gray-400 h-56">
       <a href="javascript:void(0)">
         <div class="w-full h-full tracking-wider leading-loose">
-          <img class="object-cover w-full h-full" :src="article.image_path" alt="" >
-          <div>{{article.title}}</div>
+          <img class="object-cover w-full h-full" 
+               :src="article.image_path" />
+          <div>{{ article.title }}</div>
         </div>
       </a>
     </div>
-</div>
+  </div>
 </template>
 <script lang="ts">
    
-    import { ref, defineComponent } from 'vue'
+    import { defineComponent } from 'vue'
 
     export default defineComponent({
       components: {
         
       },
-      name: 'photo-page',
       data(){
         return{
           articles:[

@@ -7,7 +7,7 @@
 
 <script lang="ts">
 
-  import { ref, defineComponent } from 'vue';
+  import { defineComponent } from 'vue';
   import dount_init from '../assets/ts/three_dount';
   import cube_init from '../assets/ts/three_cube';
   
