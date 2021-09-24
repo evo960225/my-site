@@ -15,10 +15,12 @@
     mounted() {
       const canvas = document.querySelector('#canvas1');
       if(canvas!==null){
+        canvas.textContent = '';
         dount_init(canvas);
       }
       const canvas2 = document.querySelector('#canvas2');
       if(canvas2!==null){
+        canvas2.textContent = '';
         cube_init(canvas2);
       }
     },
