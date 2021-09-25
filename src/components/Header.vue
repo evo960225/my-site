@@ -3,7 +3,7 @@
     <div class="space h-4"></div>
     <div class="topbar fixed z-50 bg-yellow-300 w-full shadow-md bg-opacity-100">
       <div class="flex max-w-screen-xl w-full p-2 mx-auto">     
-        <div id="logo" class="pl-4 font-medium w-64 sm:w-2/5">
+        <div id="logo" class="font-medium pl-6 sm:pl-4 w-64 sm:w-6/12 md:w-6/12 ">
           <a href="./index.html" class="flex">
             <img src="../assets/logo.png" alt="" class="h-10 sm:h-12" />
             <span class="mx-4 my-auto align-middle font-bold tracking-widest text-gray-700 text-left
@@ -13,7 +13,7 @@
                 
         <!-- nav <md show -->
         <div 
-          class="md:hidden my-auto font-bold text-gray-700 text-2xl align-middle ml-auto mr-4"
+          class="md:hidden my-auto font-bold text-gray-700 text-2xl align-middle ml-auto mr-5"
           @click="showSidebar = !showSidebar">
           <font-awesome-icon :icon="['fas','bars']" />
         </div>
@@ -32,19 +32,20 @@
     </div>
     <div class="space h-14 sm:h-16"></div>  
     <!-- nav <md sidebar -->
-    <transition name="fade" mode="out-in">
-      <nav-small v-if="showSidebar" class="fixed z-50 bg-gray-700 w-full left-0 transfer">
-        <div class="absolute top-1 right-2" 
+    <transition name="movedown">
+      <nav-small v-if="showSidebar" class="fixed z-50 bg-gray-50 w-full left-0 pt-7 pb-8 opacity-90">
+        <div class="absolute top-2 right-3 text-3xl" 
              @click="showSidebar=false">
           <font-awesome-icon :icon="['fas','times']" />
         </div>
         
         <nav @click="showSidebar=false">
           <router-link v-for="item in menu_items" :key="item.name" :to="item.link"  
-                       class="nav_menu__item block align-middle text-gray-600
-                                pl-4 pr-3 py-2 rounded-md text-lg tracking-030
-                                hover:bg-gray-700 hover:text-white"> 
+                       class="nav_menu__item block align-middle text-gray-500 font-bold
+                                pl-4 pr-3 py-2 text-lg tracking-030
+                                hover:bg-gray-200 hover:text-white"> 
             {{ item.name }} 
+            <hr />
           </router-link>
         </nav>
       </nav-small>
@@ -84,11 +85,17 @@
   overflow: hidden;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.4s ease;
+.movedown-enter-active {
+  transition: transform 0.7s ease;
 }
-.fade-enter-from, .fade-leave-to {
-  opacity: 0.1;
+.movedown-leave-active {
+  transition: transform 0.4s ease;
+}
+.movedown-enter-from, .movedown-leave-to {
+  transform: translateY(-50%) scaleY(0);
+}
+.movedown-enter-to, .movedown-leave-from {
+  transform: translateY(0) scaleY(1);
 }
 
 </style>
