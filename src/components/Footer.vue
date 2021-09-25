@@ -1,5 +1,9 @@
 <template>
-  <div class="flex justify-between w-full px-24 py-9 bg-gray-800 text-gray-50">
+  <div class="flex justify-between w-full px-8 py-9 bg-gray-800 text-gray-50 
+              text-sm
+              sm:px-12
+              md:px-18 md:text-base 
+              xl:px-24">
     <div class="text-left">
       <p>聯絡我</p>
       <p>信箱: evo960225@gmail.com</p>
