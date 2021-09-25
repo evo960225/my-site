@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-evenly flex-wrap">
-    <div id="canvas1" class="m-2"></div>
-    <div id="canvas2" class="m-2"></div>
+    <div id="canvas1" class="mx-2 my-4"></div>
+    <div id="canvas2" class="mx-2 my-4"></div>
   </div>
 </template>
 
