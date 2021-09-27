@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
@@ -7,8 +9,14 @@ module.exports = {
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
     },
-    
-
+    colors: {
+      black: colors.black,
+      white: colors.white,
+      gray: colors.coolGray,
+      red: colors.red,
+      blue: colors.blueGray,
+      yellow: colors.amber,
+    },
     
     extend: {
       height: {
@@ -51,10 +59,14 @@ module.exports = {
   },
   variants: {
     extend: {
+      fontWeight: ['hover'],
       filter: ['hover', 'group-hover'],
       brightness: ['hover', 'group-hover'],
       dropShadow: ['hover', 'group-hover'],
+      animation: ['hover', 'group-hover'],
     }
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }
