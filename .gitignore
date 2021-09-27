@@ -4,4 +4,4 @@ dist-ssr
 *.local
 dist
 public
-src/fonts
+src/fonts/*
