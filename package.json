@@ -34,12 +34,15 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-vue": "^7.18.0",
     "postcss": "^8.3.6",
+    "rollup-plugin-analyzer": "^4.0.0",
     "tailwindcss": "^2.2.7",
     "typescript": "^4.3.2",
     "vite": "^2.4.4",
+    "vite-plugin-compression": "^0.3.5",
     "vue-eslint-parser": "^7.11.0",
     "vue-tsc": "^0.2.2",
     "webpack": "^5.51.1",
+    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.8.0"
   }
 }

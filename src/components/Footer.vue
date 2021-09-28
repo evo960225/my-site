@@ -5,8 +5,7 @@
               md:px-18 md:text-base 
               xl:px-24">
     <div class="text-left">
-      <p>聯絡我</p>
-      <p>信箱: evo960225@gmail.com</p>
+      <p>E-mail: evo960225@gmail.com</p>
       <p>©2021 hoshiko</p>
     </div>
     <div class="text-right my-auto text-2xl space-x-2">

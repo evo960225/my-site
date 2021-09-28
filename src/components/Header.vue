@@ -5,9 +5,9 @@
       <div class="flex max-w-screen-xl w-full p-2 mx-auto">        
         <!-- logo and title  -->
         <div id="logo" class="font-medium pl-6 sm:pl-4 w-64 sm:w-6/12 md:w-6/12">
-          <a href="./index.html" class="flex">
+          <a href="/" class="flex">
             <img src="../assets/logo.png" alt="" class="h-10 sm:h-12" />
-            <span class="mx-4 my-auto align-middle font-bold tracking-widest text-gray-700 text-left opacity-90
+            <span class="mx-4 my-auto align-middle font-semibold tracking-widest text-gray-700 text-left
                          text-xl sm:text-2xl">Hoshi Home</span>
           </a>
         </div>
@@ -40,15 +40,18 @@
              @click="showSidebar=false">
           <font-awesome-icon :icon="['fas','times']" />
         </div>
-        
         <nav @click="showSidebar=false">
-          <router-link v-for="item in menu_items" :key="item.name" :to="item.link"  
-                       class="nav_menu__item block align-middle text-gray-500 font-bold
-                                pl-4 pr-3 py-2 text-lg tracking-030
-                                hover:bg-gray-200 hover:text-white"> 
-            {{ item.name }} 
-            <hr />
-          </router-link>
+          <transition name="nav-down">
+            <div>
+              <router-link v-for="item in menu_items" :key="item.name" :to="item.link"  
+                           class="nav_menu__item block align-middle text-gray-500 font-bold
+                                  pl-4 pr-3 py-2 text-lg tracking-030
+                                  hover:bg-gray-200 hover:text-white"> 
+                {{ item.name }} 
+                <hr />
+              </router-link>
+            </div>
+          </transition>
         </nav>
       </nav-small>
     </transition>
@@ -88,20 +91,21 @@
 }
 
 .movedown-enter-active {
-  transition: transform 0.6s ease;
+  transition: all 0.5s ease;
 }
 .movedown-leave-active {
-  transition: transform 0.35s ease;
+  transition: all 0.35s ease;
 }
 .movedown-enter-from, .movedown-leave-to {
-  transform: translateY(-50%) scaleY(0);
+  transform: translateY(0%) scaleY(0);
 }
 .movedown-enter-to, .movedown-leave-from {
   transform: translateY(0) scaleY(1);
 }
+
 .kEgdPT:hover::after  {
   animation-name: example;
-  animation-duration: 0.9s;
+  animation-duration: 0.65s;
 }
 .kEgdPT::after {
   position: absolute;
@@ -121,10 +125,10 @@
   0% {
     mask-position: 0% 0; 
   }
-  32% {
+  37% {
     mask-position: 50% 0; 
   }
-  68% {
+  62% {
     mask-position: 50% 0; 
   }
   100% {
