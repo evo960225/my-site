@@ -15,7 +15,7 @@
         <!-- nav <md show -->
         <div 
           class="md:hidden my-auto font-bold text-gray-700 text-2xl align-middle ml-auto mr-5"
-          @click="showSidebar = !showSidebar">
+          @click="switchDrawer()">
           <font-awesome-icon :icon="['fas','bars']" />
         </div>
               
@@ -25,7 +25,7 @@
           <router-link 
             v-for="item in menu_items" :key="item.name" :to="item.link"  
             class="nav_menu__item align-middle text-gray-700 font-medium transition duration-300 transform
-                    hover:-translate-y-0.5 kEgdPT
+                   hover:-translate-y-0.5 menu-hover-animate
                    pl-4 pr-3 py-2 rounded-md text-lg tracking-030">
             {{ item.name }}
           </router-link>            
@@ -34,27 +34,24 @@
     </div>
     <div class="space h-14 sm:h-16"></div>  
     <!-- nav <md drawer -->
-    <transition name="movedown">
-      <nav-small v-if="showSidebar" class="fixed z-50 bg-gray-50 w-full left-0 pt-7 pb-8 opacity-90">
-        <div class="absolute top-2 right-3 text-3xl" 
-             @click="showSidebar=false">
+    <nav-small class="drawer fixed z-10 bg-gray-50 w-full left-0 opacity-90"
+               :class="{ 'drawer--open': showDrawer, 'drawer--close': !showDrawer }">
+      <nav class="drawer__nav relative" @click="closeDrawer()">
+        <div class="absolute text-3xl top-1 right-2" 
+             @click="closeDrawer()">
           <font-awesome-icon :icon="['fas','times']" />
         </div>
-        <nav @click="showSidebar=false">
-          <transition name="nav-down">
-            <div>
-              <router-link v-for="item in menu_items" :key="item.name" :to="item.link"  
-                           class="nav_menu__item block align-middle text-gray-500 font-bold
-                                  pl-4 pr-3 py-2 text-lg tracking-030
-                                  hover:bg-gray-200 hover:text-white"> 
-                {{ item.name }} 
-                <hr />
-              </router-link>
-            </div>
-          </transition>
-        </nav>
-      </nav-small>
-    </transition>
+        <div class="pt-8 mb-5">
+          <router-link v-for="item in menu_items" :key="item.name" :to="item.link"  
+                       class="nav_menu__item block align-middle text-gray-500 font-bold
+                              pl-4 pr-3 py-2 text-lg tracking-030
+                              hover:bg-gray-200 hover:text-white"> 
+            {{ item.name }} 
+            <hr />
+          </router-link>
+        </div>
+      </nav>
+    </nav-small>
   </div>
 </template>
 <script lang="ts">
@@ -70,10 +67,18 @@
               {name:'攝影', link:'photo'},
               {name:'關於星', link:'me'}
             ],
-            showSidebar: false,
+            showDrawer: false,
+            showBeforeDrawer: false,
           }
       },
+
       methods:{
+        closeDrawer(){
+          this.showDrawer = false;
+        },
+        switchDrawer(){
+          this.showDrawer = !this.showDrawer;
+        }
       }
     })
 
@@ -90,24 +95,31 @@
   overflow: hidden;
 }
 
-.movedown-enter-active {
-  transition: all 0.5s ease;
+
+.drawer, .drawer__nav {
+  transition: all 0.7s ease;
 }
-.movedown-leave-active {
-  transition: all 0.35s ease;
+.drawer__nav {
+  transition: all 0.7s ease;
 }
-.movedown-enter-from, .movedown-leave-to {
-  transform: translateY(0%) scaleY(0);
+.drawer--open {
+  transform: translateY(0%) scaleY(1);
 }
-.movedown-enter-to, .movedown-leave-from {
-  transform: translateY(0) scaleY(1);
+.drawer--close {
+  transform: translateY(-50%) scaleY(0);
+}
+.drawer--open .drawer__nav{
+  transform: translateY(0%);
+}
+.drawer--close .drawer__nav{
+  transform: translateY(-100%);
 }
 
-.kEgdPT:hover::after  {
-  animation-name: example;
+.menu-hover-animate:hover::after  {
+  animation-name: menu-animate;
   animation-duration: 0.65s;
 }
-.kEgdPT::after {
+.menu-hover-animate::after {
   position: absolute;
   bottom: 6px;
   left: 0px;
@@ -121,7 +133,7 @@
   content: "";
   z-index: -1;
 }
-@keyframes example {
+@keyframes menu-animate {
   0% {
     mask-position: 0% 0; 
   }

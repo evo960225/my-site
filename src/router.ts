@@ -7,7 +7,8 @@ import D3 from "./components/D3.vue";
 import Me from "./components/Me.vue";
 import Articles from "./components/Articles.vue";
 
-export default createRouter({
+const DEFAULT_TITLE = 'Hoshi home';
+const router =  createRouter({
     history: createWebHistory(),
     routes: [
       {
@@ -16,28 +17,40 @@ export default createRouter({
       },{
         path: '/',
         component: ContentWrapper,
+        meta: { title: 's', desc: '' },
         children: [
           {
             path: 'chapter',
-            component: ChapterPage
+            component: ChapterPage,
+            meta: { title: 's', desc: '' }
           },
           {
             path: 'articles',
-            component: Articles
+            component: Articles,
+            meta: { title: 'Hoshiko | 關於自己', desc: '' }
           },
           {
             path: '_3D',
-            component: D3
+            component: D3,
+            meta: { title: '3D作品 | Hoshiko', desc: '' }
           },
           {
             path: 'photo',
-            component: PhotoPage
+            component: PhotoPage,
+            meta: { title: '攝影 | Hoshiko', desc: '' }
           },
           {
             path: 'me',
-            component: Me
+            component: Me,
+            meta: { title: '關於自己 | Hoshiko', desc: '' }
           },
         ]
       }
     ]
 })
+router.beforeEach((to, from, next) => {
+  document.title = (to.meta.title ? to.meta.title : DEFAULT_TITLE) as string
+  next() 
+})
+ 
+export default router;
