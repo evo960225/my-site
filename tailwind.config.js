@@ -19,12 +19,21 @@ module.exports = {
     },
     
     extend: {
+      screens: {
+        'xs': '480px'
+      },
       height: {
         '1/4': '25%',
         '1/2': '50%',
         '3/4': '75%',
         'full': '100%',
         '80vh': '80vh',
+      },
+      minWidth: {
+        '25vw': '25vw',
+        '30vw': '30vw',
+        '250': '250px',
+        '300': '300px',
       },
       minHeight: {
         '70vh': '70vh',
@@ -45,6 +54,7 @@ module.exports = {
         '090' : '.9rem',
         '120' : '1.2rem',
         '150' : '1.5rem',
+        '180' : '1.8rem',
       },
       grayscale: {
         50: '50%',

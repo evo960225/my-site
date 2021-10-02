@@ -1,27 +1,52 @@
 <template>
-  <div class="flex justify-evenly flex-wrap">
-    <div id="canvas1" class="mx-2 my-4"></div>
-    <div id="canvas2" class="mx-2 my-4"></div>
-  </div>
+  <div>
+    <div>
+      <h2 class="text-3xl my-6">
+        Blender-Cycle
+      </h2>
+      <div class="flex justify-evenly flex-wrap my-3">
+        <div>
+          <img src="/src/assets/donut.jpg" width="320" height="240" />
+        </div>
+        <div class="my-auto">
+          <video src="/src/assets/heigh_cub_spin.mp4" width="320" height="240" controls></video>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-3xl mt-12">
+      Model in Three.js
+    </h2>
+    <div class="flex justify-evenly flex-wrap">
+      <div id="donut" class="mx-2 my-4"></div>
+      <div id="cube" class="mx-2 my-4"></div>
+      <div id="cup" class="mx-2 my-4"></div>
+    </div>
+ </div>
 </template>
 
 <script lang="ts">
 
   import { defineComponent } from 'vue';
-  import dount_init from '../assets/ts/three_dount';
-  import cube_init from '../assets/ts/three_cube';
-  
+  import init_donut from '../assets/ts/three_dount';
+  import init_cube from '../assets/ts/three_cube';
+  import init_cup from '../assets/ts/three_cup';
+
   export default defineComponent({
     mounted() {
-      const canvas = document.querySelector('#canvas1');
+      const canvas = document.querySelector('#donut');
       if(canvas!==null){
         canvas.textContent = '';
-        dount_init(canvas);
+        init_donut(canvas);
       }
-      const canvas2 = document.querySelector('#canvas2');
+      const canvas2 = document.querySelector('#cube');
       if(canvas2!==null){
         canvas2.textContent = '';
-        cube_init(canvas2);
+        init_cube(canvas2);
+      }
+      const canvas3 = document.querySelector('#cup');
+      if(canvas3!==null){
+        canvas3.textContent = '';
+        init_cup(canvas3);
       }
     },
     methods:{

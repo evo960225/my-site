@@ -57,14 +57,15 @@
 <script lang="ts">
    
     import { defineComponent } from 'vue'
-
+    
     export default defineComponent({
       data(){
           return{  
             menu_items: [
-              {name:'文章', link:'articles'},
+              /*{name:'文章', link:'articles'},*/
               {name:'3D', link:'_3D'},
               {name:'攝影', link:'photo'},
+              {name:'雜項', link:'other_works'},
               {name:'關於星', link:'me'}
             ],
             showDrawer: false,

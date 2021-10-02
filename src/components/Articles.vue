@@ -1,11 +1,11 @@
 <template>
-  <div class="flex warp mx-12">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3  mx-12  justify-items-center gap-3.5">
     <div 
       v-for="article in articles"
       :key="article.title" 
-      class="flex-1 mx-4 border shadow rounded border-gray-400 h-56">
+      class="flex-wrap mx-4 border shadow rounded border-gray-400 h-56 w-full max-w-xs">
       <a href="javascript:void(0)">
-        <div class="w-full h-full tracking-wider leading-loose">
+        <div class="w-full h-full tracking-wider leading-loose flex-wrap">
           <img class="object-cover w-full h-full" 
                :src="article.image_path" />
           <div>{{ article.title }}</div>
@@ -27,14 +27,14 @@
           articles:[
             { 
               title: '解析<璀璨寶石>數值設計',
-              image_path: 'src/assets/articles_images/1.jpg'
+              image_path: '/public/images_articles/1.jpg'
             },
             { 
-              title: 'B',
+              title: '待寫',
               image_path: 'src/assets/articles_images/4-s.jpg'
             },
             { 
-              title: 'C',
+              title: '待寫',
               image_path: 'src/assets/articles_images/本斥但大-s.jpg'
             }
           ]

@@ -6,7 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 export default function dount_init(element: Element){
     const loader = new GLTFLoader();
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0x555555 );
+    scene.background = new THREE.Color( 0x999999 );
 
     const camera = new THREE.PerspectiveCamera( 70, 600 / 400, 0.1, 100 );
     const renderer = new THREE.WebGLRenderer({ antialias: true });

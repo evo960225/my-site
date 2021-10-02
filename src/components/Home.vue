@@ -8,9 +8,9 @@
       </div>
     </background>
     <div class="z-10 absolute px-8 py-6 left-0 top-64 bg-gray-800 bg-opacity-30 w-full h-64 text-left text-white
-                md:px-24 lg:px-36">
+                md:px-12 lg:px-24 xl:px-36">
       <div class="text-5xl tracking-070 mb-3 font-bold
-                  md:text-8xl md:tracking-150 md:mb-6">哈囉哈！</div>
+                  md:text-9xl md:tracking-180 md:mb-6">哈囉哈！</div>
       <div class="text-xl text-white tracking-020
                   md:text-3xl md:tracking-020">
         <p>這裡是Hash code的窩</p>

@@ -5,7 +5,7 @@ import viteCompression from 'vite-plugin-compression';
 const algorithm:('gzip' | 'brotli' | 'none') = 'gzip';
 
 const viteCompressionOptions = {
-  filter: /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i , // 需要壓縮的檔案
+  filter: /\.(js|css|json|txt|ico|svg)(\?.*)?$/i , // 需要壓縮的檔案
   threshold: 1024, // 檔案容量大於這個值進行壓縮
   algorithm: algorithm , // 壓縮方式
   ext: 'gz', // 字尾名

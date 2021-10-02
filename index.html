@@ -2,11 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Haaaash Code" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://hoshiko.info" />
+    <meta property="og:image" content="https://instagram.frmq1-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/104207495_201112241124861_7371465802416179759_n.jpg?_nc_ht=instagram.frmq1-1.fna.fbcdn.net&_nc_cat=109&_nc_ohc=Taeanu0kfS8AX_vw6ZN&tn=ydK3-hQsSjTdw0zi&edm=AP_V10EBAAAA&ccb=7-4&oh=d33d37c7645c6c12871e2cd3672b3ae5&oe=615B952D&_nc_sid=4f375e">
+    <meta property="fb:app_id" content="241603416018130" />
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./favicon.ico" />
     <title>Hoshi Home</title>
   </head>
+  <script>
+    window.addEventListener('load',()=>{
+      document.querySelector('.loading-animate').classList.add("loading-animate--close");
+    });
+  </script>
+  
   <body>
+    <div class="loading-animate">
+      <img src="/src/assets/hoshi-loading.png">
+    </div>
     <div id="app">
     </div>
     <script type="module" src="./src/main.ts"></script>

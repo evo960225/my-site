@@ -1,37 +1,57 @@
 <template>
-  <div class="warp mx-12">
+  <div class="warp mx-4 md:mx-12">
     <div class="w-full">
       <div>
         <div class="flex">
-          <div class="mx-auto my-5 w-1/3">
+          <div class="mx-auto my-5 w-5/6
+                      sm:w-4/6 md:w-2/5 lg:w-1/3">
             <img class="shadow-sm" src="/src/assets/images_me/me.jpg" />
           </div>
         </div>
-        <div>畢業於國立雲林科技大學</div>
-        <div>現階段程式廢人、學生時期經常刷題(Zero Judge、Green Judge)</div>
-        <div>曾獲得全國技能競賽(程式設計)第四名、全國技藝競賽第三名</div>
-        <div>
-          <span>我信箱： </span><a href="mailto:evo960225@gmail.com">evo960225@gmail.com</a>
+        <div class="text-sm leading-loose tracking-010 md:text-base md:tracking-020">
+          <p>畢業於國立雲林科技大學</p>
+          <p>
+            <span class="inline-block">現階段程式廢人，</span>
+            <span class="inline-block">學生時期經常刷題</span>
+            <span class="inline-block">(Zero Judge、Green Judge)</span>
+          </p>
+          <p>
+            <span class="inline-block">曾獲得全國技能競賽(程式設計)第四名、</span>
+            <span class="inline-block">全國技藝競賽第三名</span>
+          </p>
+          <p>
+            <span>我信箱： </span><a href="mailto:evo960225@gmail.com">evo960225@gmail.com</a>
+          </p>
         </div>
       </div>
 
       
-      <div class="w-full text-lg text-center">
-        <h2 class="text-2xl font-bold mt-12">經歷</h2>
+      <div class="w-full text-lg text-center mt-20">
+        <h2 class="text-2xl font-semibold mb-2 tracking-070">經歷</h2>
         <hr />
-        <div class="flex mt-6">
+
+        <div class="flex justify-center mt-6 flex-wrap md:flex-nowrap">
           <div class="flex">
-            <div class="ml-auto mr-3 my-5 w-3/6">
+            <div class="mx-auto my-5 w-4/6 md:ml-auto 
+                        md:mr-3 md:min-w-250 sm:w-3/6
+                        lg:w-1/6">
               <img class="rounded-full shadow-sm" src="/src/assets/images_me/laboratory.jpg" />
             </div>
           </div>
-          <div class="text-md ml-8 my-6 text-left tracking-010">
-            <div class="font-bold text-lg my-3 tracking-030">國立雲林科技大學雜項工程師(聘期結束)</div>
-            <div>產學案支援</div>
-            <div>網站全端雜項設計</div>
-            <div>深度學習/數據分析</div>
-            <div>系統演算法</div>
-            <div>可撥聯絡窗口</div>
+          <div class="mx-auto my-4 text-left text-sm tracking-020 w-full
+                      sm:text-base sm:tracking-010 sm:mx-8 sm:w-5/6
+                      md:text-lg md:tracking-010 md:ml-8 md:w-3/5">
+            <div class="font-semibold text-lg my-2 tracking-030">
+              國立雲林科技大學雜項工程師<span class="inline-block">(聘期結束)</span>
+            </div>
+            <p>產學案支援</p>
+            <p>網站全端雜項設計</p>
+            <p>深度學習/數據分析</p>
+            <p>系統演算法</p>
+            <p>可撥聯絡窗口</p>
+            <div class="text-sm text-gray-500 italic mt-6">
+              *照片是跟學生借碩士服來穿的，沒有讀碩<span class="inline-block">(´・_・`)</span>
+            </div>
           </div>
         </div>
       </div>
