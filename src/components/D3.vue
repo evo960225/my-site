@@ -5,11 +5,11 @@
         Blender-Cycle
       </h2>
       <div class="flex justify-evenly flex-wrap my-3">
-        <div>
-          <img src="/src/assets/donut.jpg" width="320" height="240" />
+        <div class="mx-auto my-4 md:w-2/5">
+          <img src="/src/assets/donut.jpg" class="w-full" />
         </div>
-        <div class="my-auto">
-          <video src="/src/assets/heigh_cub_spin.mp4" width="320" height="240" controls></video>
+        <div class="mx-auto my-4 md:w-2/5">
+          <video src="/src/assets/heigh_cub_spin.mp4" class="w-full" controls></video>
         </div>
       </div>
     </div>
