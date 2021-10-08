@@ -27,26 +27,31 @@
 <script lang="ts">
 
   import { defineComponent } from 'vue';
-  import init_donut from '../assets/ts/three_dount';
-  import init_cube from '../assets/ts/three_cube';
-  import init_cup from '../assets/ts/three_cup';
+  import load_model from '../ts/load_glb_model';
+  import init_scene from '../ts/init_scene';
 
   export default defineComponent({
-    mounted() {
+    async mounted() {   
       const canvas = document.querySelector('#donut');
-      if(canvas!==null){
-        canvas.textContent = '';
-        init_donut(canvas);
+      if(canvas !== null){
+        const model = await load_model('donut');
+        model.position.set( 0, 0, 0 );
+        model.scale.set( 5, 5, 5 );
+        init_scene(canvas, model);
       }
       const canvas2 = document.querySelector('#cube');
       if(canvas2!==null){
-        canvas2.textContent = '';
-        init_cube(canvas2);
+        const model = await load_model('cube');
+        model.position.set( 0, 0, 0 );
+        model.scale.set( 0.2, 0.2, 0.2 );
+        init_scene(canvas2, model);
       }
       const canvas3 = document.querySelector('#cup');
       if(canvas3!==null){
-        canvas3.textContent = '';
-        init_cup(canvas3);
+        const model = await load_model('cup');
+        model.position.set( 0, 0, 0 );
+        model.scale.set( 5.5, 5.5, 5.5 );
+        init_scene(canvas3, model);
       }
     },
     methods:{

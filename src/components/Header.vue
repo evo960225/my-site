@@ -34,9 +34,10 @@
     </div>
     <div class="space h-14 sm:h-16"></div>  
     <!-- nav <md drawer -->
-    <nav-small class="drawer fixed z-10 bg-gray-50 w-full left-0 opacity-90"
-               :class="{ 'drawer--open': showDrawer, 'drawer--close': !showDrawer }">
-      <nav class="drawer__nav relative" @click="closeDrawer()">
+    <nav-small class="drawer fixed z-10 w-full left-0 opacity-90 overflow-y-hidden">
+      <nav class="drawer__nav bg-gray-50 relative"
+           :class="{ 'drawer__nav--open': showDrawer, 'drawer__nav--close': !showDrawer }"
+           @click="closeDrawer()">
         <div class="absolute text-3xl top-1 right-2" 
              @click="closeDrawer()">
           <font-awesome-icon :icon="['fas','times']" />
@@ -97,18 +98,14 @@
 }
 
 
-.drawer {
-  transition: all 0.5s ease;
-  mask-image:linear-gradient(transparent 0%,transparent 50%, #fff 50%, #fff 100%);
-  mask-size: 100% 200%;
+.drawer__nav {
+  transition: transform 0.5s ease;
 }
-.drawer--open {
+.drawer__nav--open {
   transform: translateY(0%);
-  mask-position: 0%  100%;
 }
-.drawer--close {
+.drawer__nav--close {
   transform: translateY(-100%);
-  mask-position: 0%  0%;
 }
 
 .menu-hover-animate:hover::after  {
