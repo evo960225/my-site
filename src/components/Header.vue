@@ -97,23 +97,18 @@
 }
 
 
-.drawer, .drawer__nav {
-  transition: all 0.7s ease;
-}
-.drawer__nav {
-  transition: all 0.7s ease;
+.drawer {
+  transition: all 0.5s ease;
+  mask-image:linear-gradient(transparent 0%,transparent 50%, #fff 50%, #fff 100%);
+  mask-size: 100% 200%;
 }
 .drawer--open {
-  transform: translateY(0%) scaleY(1);
+  transform: translateY(0%);
+  mask-position: 0%  100%;
 }
 .drawer--close {
-  transform: translateY(-50%) scaleY(0);
-}
-.drawer--open .drawer__nav{
-  transform: translateY(0%);
-}
-.drawer--close .drawer__nav{
   transform: translateY(-100%);
+  mask-position: 0%  0%;
 }
 
 .menu-hover-animate:hover::after  {

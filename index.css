@@ -23,26 +23,17 @@
 .loading-animate > img{
     margin: auto;
     opacity: 0.6;
-    animation: loader 1.5s infinite ease;
+    animation: loader 2s infinite;
 }
 .loading-animate--close {
     opacity: 0;
     visibility: hidden;
 }
 @keyframes loader {
-  0% {
+  0%,24%,48%,72%,100% {
     transform: translateY(0);
   }
-  25% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  75% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
+  12%,36%,60% {
+    transform: translateY(-10px);
   }
 }
