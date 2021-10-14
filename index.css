@@ -18,12 +18,11 @@
     background-attachment: fixed;
     min-height: 100%;
     background-image: url('./src/assets/bg2.svg');
-    ;
 }
 .loading-animate > img{
     margin: auto;
     opacity: 0.6;
-    animation: loader 2.1s infinite;
+    animation: loader 2.3s infinite;
 }
 .loading-animate--close {
     opacity: 0;
