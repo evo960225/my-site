@@ -34,7 +34,8 @@
     </div>
     <div class="space h-14 sm:h-16"></div>  
     <!-- nav <md drawer -->
-    <nav-small class="drawer fixed z-10 w-full left-0 opacity-90 overflow-y-hidden">
+    <nav-small class="drawer fixed z-10 w-full left-0 opacity-90 overflow-y-hidden"
+               :class="{ 'invisible': !showDrawer }">
       <nav class="drawer__nav bg-gray-50 relative"
            :class="{ 'drawer__nav--open': showDrawer, 'drawer__nav--close': !showDrawer }"
            @click="closeDrawer()">
@@ -96,10 +97,14 @@
   color: white; 
   overflow: hidden;
 }
-
-
+:root {
+  --topbar-transition-sec: 0.5s;
+}
+.drawer{
+  transition: visibility var(--topbar-transition-sec);
+}
 .drawer__nav {
-  transition: transform 0.5s ease;
+  transition: transform var(--topbar-transition-sec) ease;
 }
 .drawer__nav--open {
   transform: translateY(0%);
