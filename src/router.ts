@@ -25,12 +25,11 @@ const router =  createRouter({
             component: ChapterPage,
             meta: { title: 's', desc: '' }
           },
-          /*
           {
             path: 'articles',
             component: Articles,
-            meta: { title: 'Hoshiko | 關於自己', desc: '' }
-          },*/
+            meta: { title: '測試 | Hoshiko', desc: '' }
+          },
           {
             path: '_3D',
             component: D3,

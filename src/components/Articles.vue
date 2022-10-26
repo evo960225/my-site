@@ -12,11 +12,14 @@
         </div>
       </a>
     </div>
+    <div>{{ fire_image_ref }}</div>
+    <img :src="fire_image_ref" alt="" />
   </div>
 </template>
 <script lang="ts">
-   
-    import { defineComponent } from 'vue'
+    import { defineComponent } from 'vue';
+    import { initializeApp } from "firebase/app";
+    import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
     export default defineComponent({
       components: {
@@ -37,8 +40,27 @@
               title: '待寫',
               image_path: 'src/assets/articles_images/本斥但大-s.jpg'
             }
-          ]
+          ],
+          fire_image_ref:''
         }
+      },
+      mounted(){
+        const firebaseApp = initializeApp({
+          apiKey: 'AIzaSyDTAgTfyPi62vVe157WlU_1acGdkN0tu24',
+          projectId: 'web-design-36152',
+          storageBucket: 'gs://web-design-36152.appspot.com'
+        });
+
+        var storage = getStorage(firebaseApp);
+        getDownloadURL(ref(storage, 'IMG_0807.JPG'))
+        .then((url) => {
+          this.fire_image_ref = url;
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+
+        
       },
       methods: {
    
